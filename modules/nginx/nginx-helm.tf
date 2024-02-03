@@ -8,7 +8,7 @@ resource "helm_release" "nginx" {
   name       = "nginx-release"
   chart      = "./nginx-chart"
   namespace  = "default"
-  depends_on = [modules.nginx]
+  depends_on = [module.nginx]
 
   set {
     name  = "service.type"
