@@ -14,6 +14,7 @@ module "eks" {
   scaling_min_size        = 1
   instance_types          = ["t3.small"]
   key_pair                = "TzKeyPair"
+
 }
 
 module "vpc" {
@@ -26,13 +27,5 @@ module "vpc" {
   public_cidrs            = ["10.0.1.0/24", "10.0.2.0/24"]
   map_public_ip_on_launch = true
   rt_route_cidr_block     = "0.0.0.0/0"
-
-}
-
-module "nginx" {
-  source                  = "./modules/nginx"
-  cluster_name            = "module-eks-${random_string.suffix.result}"
-  nginx_replica_count     = 2
-  nginx_image_version     = "stable"
 
 }

@@ -53,3 +53,22 @@ resource "random_string" "suffix" {
   length  = 5
   special = false
 }
+
+data "aws_eks_cluster" "eks_cluster" {
+  depends_on = [module.eks]
+  name = module.eks.cluster_name
+}
+
+data "aws_eks_cluster_auth" "aws_cluster_auth" {
+  depends_on = [module.eks]
+  name = module.eks.cluster_name
+}
+
+provider "helm" {
+  kubernetes {
+    host                   = data.aws_eks_cluster.eks_cluster.endpoint
+    cluster_ca_certificate = base64decode(data.aws_eks_cluster.eks_cluster.certificate_authority.0.data)
+    token                  = data.aws_eks_cluster_auth.aws_cluster_auth.token
+  }
+
+}

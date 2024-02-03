@@ -1,5 +1,0 @@
-name: nginx-deployment
-version: 0.1.0
-description: A Helm chart for deploying an Nginx server on an existing EKS cluster in AWS
-type: application
-appVersion: 1.21.0
