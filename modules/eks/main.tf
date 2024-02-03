@@ -125,3 +125,6 @@ resource "aws_iam_role_policy_attachment" "tz-labs-AmazonEC2ContainerRegistryRea
   role       = aws_iam_role.tz-labs2.name
 }
 
+output "kubeconfig_path" {
+  value = aws_eks_cluster.my_cluster.kubeconfig[*].filename
+}
