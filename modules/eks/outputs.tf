@@ -14,4 +14,3 @@ output "cluster_endpoint" {
 output "cluster_name" {
   value = aws_eks_cluster.tz-labs.name
 }
-

@@ -2,7 +2,7 @@
 resource "aws_eks_cluster" "tz-labs" {
   name     = var.cluster_name
   role_arn = aws_iam_role.tz-labs.arn
-
+ 
 #VPC Configuration being defined
   vpc_config {
     subnet_ids              = var.aws_public_subnet
@@ -124,4 +124,3 @@ resource "aws_iam_role_policy_attachment" "tz-labs-AmazonEC2ContainerRegistryRea
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
   role       = aws_iam_role.tz-labs2.name
 }
-
