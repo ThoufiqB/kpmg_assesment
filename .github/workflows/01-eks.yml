@@ -12,7 +12,7 @@ jobs:
 
   Apply:
     needs: Plan
-    uses: ThoufiqB/kpmg_assesment/.github/workflows/aws_tf_appy.yml@main
+    uses: ThoufiqB/kpmg_assesment/.github/workflows/aws_tf_apply.yml@main
     with:
       gh_environment: dev
     secrets:
