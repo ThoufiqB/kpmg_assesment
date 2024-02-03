@@ -26,11 +26,11 @@ resource "helm_release" "nginx" {
   version    = "8.2.1"
 
   values = [
-    file("helm/nginx/values.yaml")
+    file("Helm-CHart/nginx/values.yaml")
   ]
 
-  depends_on = [
-    aws_eks_cluster.cluster,
-    aws_eks_node_group.node_group,
-  ]
+#   depends_on = [
+#     aws_eks_cluster.cluster,
+#     aws_eks_node_group.node_group,
+#   ]
 }
