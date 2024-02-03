@@ -2,9 +2,12 @@ provider "helm" {
   kubernetes {
     host     = data.aws_eks_cluster.cluster.endpoint
     token    = data.aws_eks_cluster_auth.cluster.token
-    client_certificate     = base64decode(data.aws_eks_cluster.cluster.certificate_authority[0].data)
-    client_key             = base64decode(data.aws_eks_cluster_auth.cluster.client_certificate)
-    cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority[0].data)
+    cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
+    client_certificate     = data.aws_eks_cluster_auth.cluster.client_certificate
+    client_key             = data.aws_eks_cluster_auth.cluster.client_key
+    # client_certificate     = base64decode(data.aws_eks_cluster.cluster.certificate_authority[0].data)
+    # client_key             = base64decode(data.aws_eks_cluster_auth.cluster.client_certificate)
+    # cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority[0].data)
   }
 }
 
