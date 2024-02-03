@@ -2,15 +2,19 @@ replicaCount: 2
 
 image:
   repository: nginx
-  tag: stable
+  tag: 1.21.0
   pullPolicy: IfNotPresent
 
 service:
-  name: nginx-service
   type: ClusterIP
   port: 80
+  targetPort: 80
 
-ingress:
-  enabled: false
-
-resources: {}
+serviceMonitor:
+  enabled: true
+  namespace: monitoring
+  selector:
+    app: nginx
+  endpoints:
+    - port: http
+      path: /

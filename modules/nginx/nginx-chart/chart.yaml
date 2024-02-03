@@ -1,6 +1,5 @@
-apiVersion: v2
-name: nginx-chart
-description: A Helm chart for deploying Nginx
+name: nginx-deployment
 version: 0.1.0
-ingress:
-  enabled: true
+description: A Helm chart for deploying an Nginx server on an existing EKS cluster in AWS
+type: application
+appVersion: 1.21.0
