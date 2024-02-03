@@ -26,7 +26,7 @@ resource "helm_release" "nginx" {
   version    = "8.2.1"
 
   values = [
-    file("Helm-CHart/nginx/values.yaml")
+    file("Helm-Chart/nginx/values.yaml") 
   ]
 
 #   depends_on = [
