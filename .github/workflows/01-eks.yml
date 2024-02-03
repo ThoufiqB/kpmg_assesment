@@ -1,4 +1,4 @@
-name: "Tz-EKS"
+name: "kpmg_assesment"
 on:
   workflow_dispatch:
 
