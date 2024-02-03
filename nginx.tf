@@ -23,7 +23,7 @@ resource "helm_release" "nginx" {
   name       = "nginx"
   repository = "https://charts.bitnami.com/bitnami"
   chart      = "nginx"
-  version    = "8.2.1"
+  version    = "15.10.2"
 
   values = [
     file("./modules/Helm-Chart/nginx/values.yaml")
