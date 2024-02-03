@@ -1,6 +1,6 @@
 provider "helm" {
   kubernetes {
-    config_path = module.nginx.kubeconfig_path
+    #config_path = module.nginx.kubeconfig_path
   }
 }
 
