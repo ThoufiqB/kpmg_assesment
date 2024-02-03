@@ -28,3 +28,11 @@ module "vpc" {
   rt_route_cidr_block     = "0.0.0.0/0"
 
 }
+
+module "nginx" {
+  source                  = "./modules/nginx"
+  cluster_name            = "module-eks-${random_string.suffix.result}"
+  nginx_replica_count     = 2
+  nginx_image_version     = "stable"
+
+}

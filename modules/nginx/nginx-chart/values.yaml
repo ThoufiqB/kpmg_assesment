@@ -1,0 +1,16 @@
+replicaCount: 2
+
+image:
+  repository: nginx
+  tag: stable
+  pullPolicy: IfNotPresent
+
+service:
+  name: nginx-service
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+
+resources: {}
