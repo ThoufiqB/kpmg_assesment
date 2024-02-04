@@ -21,7 +21,7 @@ resource "helm_release" "nginx" {
   repository = "https://charts.bitnami.com/bitnami"
   chart      = "nginx"
   version    = "15.10.2"
-  timeout    = 600
+  
   # values = [
   #   file("./modules/Helm-Chart/nginx/values.yaml")
   # ]
