@@ -24,7 +24,7 @@ resource "helm_release" "nginx" {
   
   set {
     name  = "replicaCount"
-    value = 2  # Set the desired replica count
+    value = 3  # Set the desired replica count
   }
 
 
