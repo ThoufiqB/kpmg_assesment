@@ -1,20 +1,20 @@
-name: "kpmg_assesment"
-on:
-  workflow_dispatch:
+# name: "kpmg_assesment"
+# on:
+#   workflow_dispatch:
 
-jobs:
-  Plan:
-    uses: ThoufiqB/kpmg_assesment/.github/workflows/aws_tf_plan.yml@main
-    with:
-      gh_environment: dev
-    secrets:
-      cli_config_credentials_token: ${{ secrets.TFC_API_TOKEN }}
+# jobs:
+#   Plan:
+#     uses: ThoufiqB/kpmg_assesment/.github/workflows/aws_tf_plan.yml@main
+#     with:
+#       gh_environment: dev
+#     secrets:
+#       cli_config_credentials_token: ${{ secrets.TFC_API_TOKEN }}
 
-  Apply:
-    needs: Plan
-    uses: ThoufiqB/kpmg_assesment/.github/workflows/aws_tf_apply.yml@main
-    with:
-      gh_environment: dev
-    secrets:
-      cli_config_credentials_token: ${{ secrets.TFC_API_TOKEN }}
+#   Apply:
+#     needs: Plan
+#     uses: ThoufiqB/kpmg_assesment/.github/workflows/aws_tf_apply.yml@main
+#     with:
+#       gh_environment: dev
+#     secrets:
+#       cli_config_credentials_token: ${{ secrets.TFC_API_TOKEN }}
       
