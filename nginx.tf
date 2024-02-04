@@ -22,9 +22,11 @@ resource "helm_release" "nginx" {
   chart      = "nginx"
   version    = "15.10.2"
   
-  # values = [
-  #   file("./modules/Helm-Chart/nginx/values.yaml")
-  # ]
+  set {
+    name  = "replicaCount"
+    value = 2  # Set the desired replica count
+  }
+
 
   depends_on = [
     module.eks,

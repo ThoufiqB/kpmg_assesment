@@ -17,14 +17,14 @@ terraform {
   }
 
 #Backend source to store terraform state remotely 
-# backend "remote" {
-# 		hostname = "app.terraform.io"
-# 		organization = "tf-thoufiqb"
+backend "remote" {
+		hostname = "app.terraform.io"
+		organization = "tf-thoufiqb"
 
-# 		workspaces {
-# 			name = "tz-labs" 
-# 		}
-# 	}
+		workspaces {
+			name = "tz-labs" 
+		}
+	}
 
 }
 
